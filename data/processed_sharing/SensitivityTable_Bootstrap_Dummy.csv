@@ -1,0 +1,12 @@
+﻿Predictor;Just means & dummy ;mlAR & rsd (Main);mlAR & SD;mlVAR & rsd;mlVAR & SD;AR(1) & rsd;AR(1) & SD
+Mean Exh;;;;;;;
+Mean Dist;;;;;;;
+Mean Fed Up;;;;;;;
+Belgium (Dummy);;;;;;;
+Inertia Exh;;;;;;;
+Inertia Dist;;*;*;*;*;;
+Inertia FedUp;;;;;;;
+Variation Exh;;;;;;;
+Variation Dist;;;;;;;*
+Variation FedUp;;;;;;;
+Covariation;;;;;;;

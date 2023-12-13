@@ -1,0 +1,11 @@
+﻿Predictor;Means;mlAR & rsd (Main);mlAR & SD;mlVAR & rsd;mlVAR & SD;AR(1) & rsd;AR(1) & SD
+Mean Exh;1;0;0;0;0;0;0
+Mean Dist;1;0;0;0;0;0;1
+Mean Fed Up;0;0;0;0;0;0;0
+Inertia Exh;;0;0;0;0;0;0
+Inertia Dist;;0;0;0;0;0;0
+Inertia FedUp;;0;0;0;0;0;0
+Variation Exh;;0;0;0;0;0;0
+Variation Dist;;0;0;0;0;0;0
+Variation FedUp;;0;0;0;0;0;0
+Covariation;;0;0;0;0;0;0

@@ -16,10 +16,12 @@
 
 library(here) # for relative paths within project
 library(tidyverse) 
+library(remotes) # to install specific version of a package
 library(mlVAR) # autoregression
 library(psychometric) #for ICCs
 library(lme4) # for multilevel AR(1) models
 library(DataCombine) # to create lagged predictors (for multilevel AR(1) models)
+library(psych) # for multilevel reliability
 
 # the relativeVariability package is downloaded & installed from here:
 # https://ppw.kuleuven.be/okp/software/relative_variability/ (follow
@@ -58,7 +60,8 @@ data_indices <- data_parents %>%
                                          relativeSD(Dist, 0, 100), relativeSD(Dist, 0, 10)),
                        rsd_FedUp = ifelse(Sample == "Belgium", relativeSD(FedUp, 0, 100), relativeSD(FedUp, 0, 10)))
   
-# Note - warning message, some participants have a mean = minimum of scale, so outputs 'NAN' for their measures
+
+  # Note - warning message, some participants have a mean = minimum of scale, so outputs 'NAN' for their measures
 
   # To identify these participants: 
   pns_zerovar <- data_indices %>%
@@ -96,6 +99,40 @@ data_indices <- data_indices %>%
   dplyr::mutate(sd_Exh_scaled = sd(Exh_scaled, na.rm=TRUE),
                 sd_Dist_scaled = sd(Dist_scaled, na.rm=TRUE),
                 sd_FedUp_scaled = sd(FedUp_scaled, na.rm=TRUE))
+
+
+
+#--------------------------------------------------------------------#
+# Multilevel Reliability of 3 Parental Burnout items together #####
+#--------------------------------------------------------------------#
+
+
+# Getting data in correct format
+data_PBAr <- data_parents %>%
+  filter(!(ID %in% pns_zerovar$ID)) %>% 
+  # Belgium sample has 0-100 scale; US scale has 0-10
+  dplyr::mutate(Exh_scaled = ifelse(Sample == "Belgium",
+                                    Exh/10, Exh),
+                Dist_scaled = ifelse(Sample == "Belgium",
+                                     Dist/10, Dist),
+                FedUp_scaled = ifelse(Sample == "Belgium", 
+                                      FedUp/10, FedUp)) %>%
+  dplyr::mutate(n_day = as.integer(n_day)) %>%
+  dplyr::select(ID, n_day, Exh_scaled, Dist_scaled, FedUp_scaled)
+
+data_PBAr <- as.data.frame(data_PBAr)
+
+mlr_all <- psych::mlr(data_PBAr, grp = "ID", Time = "n_day", 
+                  items = c(3:5), icc=F, lmer = T, lme = F, plot = F, na.action = "na.omit")
+mlr_all
+
+#saveRDS(mlr_all, file = here::here("output", "r_objects", "multilevel_reliability_output.Rds"))
+#mlr_all <- readRDS(file = here::here("output", "r_objects", "multilevel_reliability_output.Rds"))
+
+# Key results: 
+# RkR  =  0.97 Generalizability of average time points across all items (Random time effects) - can interpret as between subjects
+# Rc   =  0.6 Generalizability of change (fixed time points, fixed items) - can interpret as within subjects
+
 
 
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -272,30 +309,25 @@ data_parents <- data_parents %>%
                 FedUp_scaled = ifelse(Sample == "Belgium", FedUp/10, FedUp))
 
 # Creating lagged variables
-data_parents <- DataCombine::slide(data_parents, Var = "Exh_scaled", GroupVar = "ID", NewVar = "Exh_scaled_lag", slideBy = -1)
-data_parents <- DataCombine::slide(data_parents, Var = "Dist_scaled", GroupVar = "ID", NewVar = "Dist_scaled_lag", slideBy = -1)
-data_parents <- DataCombine::slide(data_parents, Var = "FedUp_scaled", GroupVar = "ID", NewVar = "FedUp_scaled_lag", slideBy = -1)
+data_parents <- data_parents %>%
+  arrange(ID, n_day) %>%
+  mutate(Exh_scaled_lag = dplyr::lag(Exh_scaled, n = 1)) %>%
+  mutate(Dist_scaled_lag = dplyr::lag(Dist_scaled, n = 1)) %>%
+  mutate(FedUp_scaled_lag = dplyr::lag(FedUp_scaled, n = 1))
+
+# Creating lagged variables - old version, wasn't sorted correctly
+# data_parents <- DataCombine::slide(data_parents, Var = "Exh_scaled", GroupVar = "ID", NewVar = "Exh_scaled_lag", slideBy = -1)
+# data_parents <- DataCombine::slide(data_parents, Var = "Dist_scaled", GroupVar = "ID", NewVar = "Dist_scaled_lag", slideBy = -1)
+# data_parents <- DataCombine::slide(data_parents, Var = "FedUp_scaled", GroupVar = "ID", NewVar = "FedUp_scaled_lag", slideBy = -1)
+
+
 
 # Multilevel AR(1) models for each variable (Exh, Dist, FedUp) and both sample (US and Belgium)
 
 # Exhaustion
-
 mlAR1_Exh_US <- lme4::lmer(Exh_scaled ~ 1 + Exh_scaled_lag + (1 + Exh_scaled_lag | ID), data = data_parents[data_parents$Sample=="US",], REML = FALSE)
 mlAR1_Exh_BE <- lme4::lmer(Exh_scaled ~ 1 + Exh_scaled_lag + (1 + Exh_scaled_lag | ID), data = data_parents[data_parents$Sample=="Belgium",], REML = FALSE)
-  # Note: This model leads to a warning messages about non-convergence; however,
-  # when looking at the conversation here
-  # (https://github.com/lme4/lme4/issues/120) & testing whether following is < .001 :
-    relgrad <- with(mlAR1_Exh_BE@optinfo$derivs,solve(Hessian,gradient))
-    max(abs(relgrad)) 
-    # Then looking at different optimizers:
-    
-    # When testing 2 other optimizers, there are no longer convergence issues: 
-    update(mlAR1_Exh_BE, control=lmerControl(optimizer="Nelder_Mead"))
-    update(mlAR1_Exh_BE, control=lmerControl(optimizer="bobyqa"))
-    
-    # Therefore keeping one of these models as the final one:
-mlAR1_Exh_BE <- update(mlAR1_Exh_BE, control=lmerControl(optimizer="bobyqa"))
-    
+
 
 # Distance
 mlAR1_Dist_US <- lme4::lmer(Dist_scaled ~ 1 + Dist_scaled_lag + (1 + Dist_scaled_lag | ID), data = data_parents[data_parents$Sample=="US",], REML = FALSE)
@@ -304,7 +336,14 @@ mlAR1_Dist_BE <- lme4::lmer(Dist_scaled ~ 1 + Dist_scaled_lag + (1 + Dist_scaled
 # Fed Up
 mlAR1_FedUp_US <- lme4::lmer(FedUp_scaled ~ 1 + FedUp_scaled_lag + (1 + FedUp_scaled_lag | ID), data = data_parents[data_parents$Sample=="US",], REML = FALSE)
 mlAR1_FedUp_BE <- lme4::lmer(FedUp_scaled ~ 1 + FedUp_scaled_lag + (1 + FedUp_scaled_lag | ID), data = data_parents[data_parents$Sample=="Belgium",], REML = FALSE)
-  update(mlAR1_FedUp_BE, control=lmerControl(optimizer="bobyqa"))
+    # Note: This model leads to a warning messages about non-convergence; however,
+    # when looking at the conversation here
+    # (https://github.com/lme4/lme4/issues/120) & testing whether following is < .001 :
+    relgrad <- with(mlAR1_FedUp_BE@optinfo$derivs,solve(Hessian,gradient))
+    max(abs(relgrad))   
+    # When testing other optimizer, no longer convergence issues:    
+    update(mlAR1_FedUp_BE, control=lmerControl(optimizer="bobyqa"))
+
 
 # Getting values into joint dataframes
 AR_Exh <- dplyr::bind_rows(coef(mlAR1_Exh_US)$ID["Exh_scaled_lag"], coef(mlAR1_Exh_BE)$ID["Exh_scaled_lag"]) %>%

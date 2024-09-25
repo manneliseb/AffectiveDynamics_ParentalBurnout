@@ -16,7 +16,6 @@
 
 library(here) # for relative paths within project
 library(tidyverse) 
-library(remotes) # to install specific version of a package
 library(mlVAR) # autoregression
 library(psychometric) #for ICCs
 library(lme4) # for multilevel AR(1) models

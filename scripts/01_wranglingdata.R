@@ -7,6 +7,8 @@
 
 # All code and materials for this project can be found here: https://osf.io/5nfbu/
 
+# ( Note - adding in data about number of kids & age of youngest/only child during revision)
+
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # R packages -----------------------------------------------------------------
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -16,6 +18,7 @@ here::i_am("scripts/01_wranglingdata.R")
 # For entire project
 library(here) # for relative paths within project
 library(tidyverse) 
+
 
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # 1) Importing Data ----------------------------------------------------------
@@ -29,8 +32,7 @@ library(tidyverse)
 Daily_genpop <- readr::read_csv(here::here("data", "raw", "ESM_PB_clean_FromUnselectedSample.csv"))
 
 # Also baseline demographic scores per participant (not publicly available):
-demo_genpop <- readr::read_csv(here::here("data", "raw", "ESM_PB_demographic_questionnaires_8w_FromUnselectedSample.csv")) %>%
-  dplyr::select(ID, PBA_total)
+demo_genpop <- readr::read_csv(here::here("data", "raw", "demo_genpop.csv")) 
 
 
 ### 1.2 Previous dataset 2 (PB Belgium) --------------------------------------------
@@ -39,12 +41,11 @@ demo_genpop <- readr::read_csv(here::here("data", "raw", "ESM_PB_demographic_que
   # Full project info: https://osf.io/9zgbw
 
 Daily_PB <- readr::read_csv(here::here("data", "raw", "ESM2_PB_clean_anon.csv"))
-demo_PB <- readr::read_csv(here::here("data", "raw", "ESM2_PB_Demographic_questionnaires.csv")) %>%
-  dplyr::select(ID, PBA_total)
+demo_PB <- readr::read_csv(here::here("data", "raw", "demo_PB.csv")) 
 
 ### 1.3 Dataset 3 (US; daily diary item scales: 0-10) --------------------------------------------
 Daily_eng <- readr::read_csv(here::here("data", "raw", "baby emu eod for UCLouvain.csv"))
-PBA_eng <- readr::read_csv(here::here("data", "raw", "baby emu pba for UCLouvain.csv"))
+demo_eng <- readr::read_csv(here::here("data", "raw", "baby emu pba for UCLouvain.csv"))
 
 
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -85,13 +86,22 @@ data_joined_Belgium <-  bind_rows(Daily_PB, Daily_genpop) %>%
 ### 2.3 Formatting dataset 3 (US sample) --------------------------------------------
 
 # Compute total score for PBA: 
-PBA_eng <- PBA_eng %>%
+demo_eng <- demo_eng %>%
   # US sample PBA scores was automatically saved by Qualtrics on a different
   # scale (1-7 vs 0-6) so subtracting one from all PBA items to match...
   dplyr::mutate(across(PBA_1:PBA_25, ~ .x -1)) %>%
   dplyr::mutate(PBA_total = rowSums(dplyr::select(., contains("PBA_"))))  %>%
   dplyr::rename(ID = PID_masked) %>%
-  dplyr::select(ID, PBA_total)
+  
+  # Getting age data in same format as Belgian sample
+  # First: Getting age of youngest (or only kid)
+  dplyr::mutate(agekid_onlyOrYoungest = case_when(younger_siblings == 0 ~ child_age_mos, 
+                                                  younger_siblings == 1 ~ child_age_mos - 12)) %>%
+                             # Note: Don't have exact info of all kids, but age
+                             # range of kids in study is 12-24 mo old; inferring
+                             # that the age of the youngest kid is ~12 months
+                             # younger than the child in the study
+  dplyr::select(ID, PBA_total, num_kids_house = household_size_children, agekid_onlyOrYoungest)
 
 
 # Make sure variable names are identical
@@ -108,12 +118,14 @@ Daily_eng <- Daily_eng %>%
   tidyr::complete(ID, n_day = 1:21) 
 
 # Merging daily data with PBA data and adding sample identifier (=US)
-data_joined_US <- merge(Daily_eng, PBA_eng, by = "ID") %>%
+data_joined_US <- merge(Daily_eng, demo_eng, by = "ID") %>%
   mutate(Sample = "US")
 
 
 ### 2.3 Merging Belgium & US datasets --------------------------------------------
 data_parents <- bind_rows(data_joined_Belgium, data_joined_US)
+
+
 
 
 

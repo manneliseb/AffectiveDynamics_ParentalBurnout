@@ -23,6 +23,7 @@
 
 library(tidyverse)
 library(performance) # for model assumption checks
+library(see) # to visualize plots for above
 library(sjPlot)
 
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -254,9 +255,9 @@ performance::check_collinearity(model2_mlVAR_rsd) # a lot of interaction terms +
                             ICC, 
                           data = df_regression[df_regression$Sample=="Belgium",])
 
-performance::check_model(model2_mlVAR_rsd_BE) # heteroscedastic & collinearity
+performance::check_model(model2_mlVAR_rsd_BE, panel = FALSE) # heteroscedastic & collinearity
   performance::check_collinearity(model2_mlVAR_rsd_BE) 
-  # mean Exhaustion, mean Fed Up & AR Exh (mlVAR) all have a high VIF/correlation
+  # okay for collinearity
   
 
 
@@ -555,6 +556,7 @@ sjPlot::tab_model(model1_means_dummy, model2_arml_rsd,
                   file = here::here("output", "tables", "Main_models_bootstrap.xls"))
                   #file = )
 
+
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # 4.2) Main Sensitivity Tables (Joint Sample, Bootstrapped) -----------------------
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -623,6 +625,7 @@ sjPlot::tab_model(model1_means_dummy, model2_arml_rsd,
                   show.intercept = FALSE, show.fstat = TRUE, show.obs = TRUE, emph.p = T, 
                   p.adjust = (method = "BH") , 
                   title = "Regression models (with main affective indices): Joint data with raw data",
+                  #file = )
                   file = here::here("output", "tables", "Sensitivity models","Main_models_raw.xls"))
 
 #### Table: SD & rSD ----------------------------------------------------------------
@@ -782,3 +785,89 @@ sjPlot::tab_model(model_exp_BE, model_exp_US,
                   file = here::here("output", "tables", "exploratory_meanmoderation_bootstrap.xls"))
                   #file = )
 
+
+# ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# 4.6) Controlling for age of kid   ------------------------------------
+# ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+### First: Adding in age of kid into exact models from main analyses --------------------
+# Model 1: Dummy variable with just mean-levels (joint sample) 
+model1_means_dummy_age <- lm(PBA_total ~ Belgium +
+                           mean_Exh_scaled + mean_Dist_scaled + mean_FedUp_scaled + 
+                             agekid_onlyOrYoungest,
+                         data = df_regression)
+
+
+# Check assumptions of model
+performance::check_collinearity(model1_means_dummy_age) # okay
+performance::check_heteroscedasticity(model1_means_dummy_age) 
+# Heteroscedasticity (non-constant error variance) detected (p < .001).
+performance::check_normality(model1_means_dummy_age) 
+# Non-normality of residuals detected (p = 0.009)
+
+
+
+# Model 2: Affect Dynamic predictors with dummy variable for Sample type 
+
+model2_arml_rsd_age <- lm(PBA_total ~ Belgium +  # < intercept & dummy variables
+                        mean_Exh_scaled + mean_Dist_scaled + mean_FedUp_scaled +
+                        # affective dynamic indices:
+                        rsd_Exh + rsd_Dist + rsd_FedUp + 
+                        AR.1ml_Exh + AR.1ml_Dist + AR.1ml_FedUp +
+                        ICC + 
+                        # interactions with dummy variables: 
+                        rsd_Exh*Belgium + rsd_Dist*Belgium + rsd_FedUp*Belgium + 
+                        AR.1ml_Exh*Belgium + AR.1ml_Dist*Belgium + AR.1ml_FedUp*Belgium +
+                        ICC*Belgium +
+                          agekid_onlyOrYoungest,
+                      data = df_regression)
+
+# Check assumptions of model
+performance::check_collinearity(model2_arml_rsd_age) # high collinearity but not with age variale
+performance::check_heteroscedasticity(model2_arml_rsd_age) 
+# Heteroscedasticity (non-constant error variance) detected (p < .001).
+performance::check_normality(model2_arml_rsd_age) 
+# Okay (p = 0.060)
+summary(model2_arml_rsd_age)
+
+
+### Second: Adding in instead of dummy variable --------------------
+model1_means_age <- lm(PBA_total ~ mean_Exh_scaled + mean_Dist_scaled + mean_FedUp_scaled + 
+                               agekid_onlyOrYoungest,
+                             data = df_regression)
+
+summary(model1_means_age) # now age sig
+
+performance::check_collinearity(model1_means_age) # okay
+performance::check_heteroscedasticity(model1_means_age) 
+# Heteroscedasticity (non-constant error variance) detected (p < .001).
+performance::check_normality(model1_means_age) 
+# Okay (p = 0.001)
+
+
+
+model2_age <- lm(PBA_total ~ mean_Exh_scaled + mean_Dist_scaled + mean_FedUp_scaled +
+                            # affective dynamic indices:
+                            rsd_Exh + rsd_Dist + rsd_FedUp + 
+                            AR.1ml_Exh + AR.1ml_Dist + AR.1ml_FedUp +
+                            ICC + 
+                            agekid_onlyOrYoungest,
+                          data = df_regression)
+
+summary(model2_age) # now sig
+
+performance::check_collinearity(model2_age) # okay
+performance::check_heteroscedasticity(model2_age) 
+# Heteroscedasticity (non-constant error variance) detected (p < .001).
+performance::check_normality(model2_age) 
+# Okay (p = 0.039)
+
+### Saving bootstrapped table ---------------------------------
+sjPlot::tab_model(model1_means_age, model1_means_dummy_age, model2_arml_rsd_age, model2_age, 
+                  show.intercept = FALSE, show.fstat = TRUE, show.obs = TRUE, emph.p = T, 
+                  p.adjust = (method = "BH") , 
+                  dv.labels = c("Means", "Means & Sample", "Main model in Article", "Model without Sample"),
+                  bootstrap = TRUE, iterations = 2000, seed = 404,
+                  title = "Bootstrapped regression models controlling for age of kids",
+                  file = here::here("output", "tables", "modelbootstrap_controllingAgeKids.xls"))
+#file = )

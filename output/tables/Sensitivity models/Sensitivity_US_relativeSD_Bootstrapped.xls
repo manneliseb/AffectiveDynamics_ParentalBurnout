@@ -20,123 +20,123 @@
 </tr>
 <tr>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">mean Exh scaled</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">4.8</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">&#45;1.1&nbsp;&ndash;&nbsp;9.7</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.10</td>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">4.6</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">&#45;1.8&nbsp;&ndash;&nbsp;8.5</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.14</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">4.6</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">&#45;1.9&nbsp;&ndash;&nbsp;8.6</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">0.15</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col8">4.7</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col9">&#45;3.5&nbsp;&ndash;&nbsp;10.4</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  0">0.20</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">&#45;1.6&nbsp;&ndash;&nbsp;9.4</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">0.11</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col8">4.6</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col9">&#45;3.2&nbsp;&ndash;&nbsp;10.3</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  0">0.21</td>
 </tr>
 <tr>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">mean Dist scaled</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">5.0</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">&#45;3.9&nbsp;&ndash;&nbsp;14.6</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.28</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">1.5</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">&#45;0.9&nbsp;&ndash;&nbsp;4.1</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">0.22</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col8">2.6</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col9">&#45;1.9&nbsp;&ndash;&nbsp;7.5</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  0">0.23</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">2.2</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">&#45;0.7&nbsp;&ndash;&nbsp;5.4</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.15</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">2.0</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">&#45;0.6&nbsp;&ndash;&nbsp;4.5</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">0.13</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col8">2.5</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col9">&#45;2.0&nbsp;&ndash;&nbsp;7.4</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  0">0.25</td>
 </tr>
 <tr>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">mean FedUp scaled</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.2</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">&#45;3.2&nbsp;&ndash;&nbsp;9.6</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.90</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">1.0</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">&#45;1.9&nbsp;&ndash;&nbsp;10.8</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">0.56</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.6</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">&#45;4.1&nbsp;&ndash;&nbsp;9.6</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.81</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.9</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">&#45;2.8&nbsp;&ndash;&nbsp;9.9</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">0.69</td>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col8">0.6</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col9">&#45;4.7&nbsp;&ndash;&nbsp;11.4</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  0">0.86</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col9">&#45;4.7&nbsp;&ndash;&nbsp;11.3</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  0">0.84</td>
 </tr>
 <tr>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">rsd Exh</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">&#45;1.0</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">&#45;26.9&nbsp;&ndash;&nbsp;23.3</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.94</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">&#45;1.8</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">&#45;27.6&nbsp;&ndash;&nbsp;22.1</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">0.87</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col8">0.3</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col9">&#45;24.8&nbsp;&ndash;&nbsp;25.7</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  0">0.98</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">&#45;0.1</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">&#45;25.5&nbsp;&ndash;&nbsp;24.5</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">1.00</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">2.8</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">&#45;22.3&nbsp;&ndash;&nbsp;28.7</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">0.81</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col8">0.5</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col9">&#45;25.3&nbsp;&ndash;&nbsp;25.6</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  0">0.97</td>
 </tr>
 <tr>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">rsd Dist</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">&#45;9.3</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">&#45;23.1&nbsp;&ndash;&nbsp;5.9</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.21</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">&#45;9.7</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">&#45;24.7&nbsp;&ndash;&nbsp;7.2</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">0.22</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col8">&#45;8.3</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col9">&#45;23.0&nbsp;&ndash;&nbsp;7.1</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">&#45;9.1</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">&#45;23.8&nbsp;&ndash;&nbsp;7.5</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.25</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">&#45;11.5</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">&#45;25.9&nbsp;&ndash;&nbsp;3.7</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">0.13</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col8">&#45;8.8</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col9">&#45;23.4&nbsp;&ndash;&nbsp;7.4</td>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  0">0.26</td>
 </tr>
 <tr>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">rsd FedUp</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">&#45;2.0</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">&#45;19.2&nbsp;&ndash;&nbsp;17.0</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.82</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">&#45;0.3</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">&#45;17.2&nbsp;&ndash;&nbsp;18.0</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">0.98</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col8">&#45;2.3</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col9">&#45;19.4&nbsp;&ndash;&nbsp;15.0</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  0">0.78</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">&#45;2.3</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">&#45;21.9&nbsp;&ndash;&nbsp;17.2</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.79</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">&#45;6.3</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">&#45;24.1&nbsp;&ndash;&nbsp;12.3</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">0.46</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col8">&#45;2.6</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col9">&#45;20.0&nbsp;&ndash;&nbsp;15.4</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  0">0.75</td>
 </tr>
 <tr>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">AR Exh</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">7.4</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">&#45;31.7&nbsp;&ndash;&nbsp;42.8</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.69</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">6.0</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">&#45;6.5&nbsp;&ndash;&nbsp;16.7</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">0.32</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col8">10.1</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col9">&#45;29.3&nbsp;&ndash;&nbsp;45.5</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  0">0.58</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">&#45;7.8</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">&#45;70.6&nbsp;&ndash;&nbsp;49.2</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.79</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">6.7</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">&#45;3.1&nbsp;&ndash;&nbsp;17.2</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">0.17</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col8">9.8</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col9">&#45;29.1&nbsp;&ndash;&nbsp;47.3</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  0">0.59</td>
 </tr>
 <tr>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">AR Dist</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">&#45;97.8</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">&#45;382.9&nbsp;&ndash;&nbsp;173.9</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.47</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">&#45;1.4</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">&#45;13.1&nbsp;&ndash;&nbsp;9.3</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">0.80</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col8">&#45;9.4</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col9">&#45;65.4&nbsp;&ndash;&nbsp;42.3</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">&#45;5.8</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">&#45;53.3&nbsp;&ndash;&nbsp;34.1</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.80</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">&#45;7.5</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">&#45;22.8&nbsp;&ndash;&nbsp;5.9</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">0.29</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col8">&#45;8.9</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col9">&#45;63.9&nbsp;&ndash;&nbsp;42.1</td>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  0">0.72</td>
 </tr>
 <tr>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">AR FedUp</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">15.1</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">&#45;25.4&nbsp;&ndash;&nbsp;56.8</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.49</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">2.3</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">&#45;9.7&nbsp;&ndash;&nbsp;16.7</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">0.72</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col8">18.5</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col9">&#45;58.2&nbsp;&ndash;&nbsp;87.2</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  0">0.62</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">11.5</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">&#45;51.7&nbsp;&ndash;&nbsp;72.3</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.71</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">&#45;0.3</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">&#45;12.2&nbsp;&ndash;&nbsp;10.9</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">0.95</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col8">18.1</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col9">&#45;60.5&nbsp;&ndash;&nbsp;89.3</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  0">0.64</td>
 </tr>
 <tr>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">ICC</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">11.7</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">&#45;4.3&nbsp;&ndash;&nbsp;28.7</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.14</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">8.9</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">&#45;7.6&nbsp;&ndash;&nbsp;25.9</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">0.27</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col8">10.9</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col9">&#45;5.7&nbsp;&ndash;&nbsp;27.5</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  0">0.20</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">10.9</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">&#45;6.0&nbsp;&ndash;&nbsp;27.6</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.19</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">7.9</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">&#45;8.8&nbsp;&ndash;&nbsp;23.6</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">0.34</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col8">10.7</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col9">&#45;6.1&nbsp;&ndash;&nbsp;26.9</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  0">0.19</td>
 </tr>
 <tr>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm; border-top:1px solid;">Observations</td>
@@ -146,8 +146,8 @@
 </tr>
 <tr>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;">R<sup>2</sup> / R<sup>2</sup> adjusted</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">0.393 / 0.317</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">0.393 / 0.318</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">0.379 / 0.301</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">0.409 / 0.335</td>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">0.385 / 0.308</td>
 </tr>
 

@@ -4,9 +4,9 @@ Mean Dist;;;;;;;
 Mean Fed Up;;;;;;;
 Belgium (Dummy);;;;;;;
 Inertia Exh;;;;;;;
-Inertia Dist;;*;*;*;*;;
+Inertia Dist;;*;*;*;*;*;
 Inertia FedUp;;;;;;;
 Variation Exh;;;;;;;
-Variation Dist;;;;;;;*
+Variation Dist;;;*;;;;*
 Variation FedUp;;;;;;;
 Covariation;;;;;;;

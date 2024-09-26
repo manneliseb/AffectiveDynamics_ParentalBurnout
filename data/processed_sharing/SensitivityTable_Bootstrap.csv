@@ -2,9 +2,9 @@
 Mean Exh;1;1;0;1;1;1;0
 Mean Dist;1;1;1;1;1;1;1
 Mean Fed Up;0;0;0;0;0;0;0
-Belgium (Dummy);1;1;0;1;1;0;0
+Belgium (Dummy);1;1;1;1;1;0;0
 Inertia Exh;;0;0;0;0;0;0
-Inertia Dist;;1;1;1;0;0;0
+Inertia Dist;;0;0;1;0;0;0
 Inertia FedUp;;0;0;0;0;0;0
 Variation Exh;;0;0;0;0;0;0
 Variation Dist;;0;0;0;0;0;0
